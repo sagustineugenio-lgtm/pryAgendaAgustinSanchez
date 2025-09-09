@@ -12,12 +12,20 @@ namespace pryAgendaAgustinSanchez
 {
     public partial class frmAgenda : Form
     {
+
+
         public frmAgenda()
         {
             InitializeComponent();
         }
         string varContactos;
         string varNumero;
+        int vContador = 0;
+        int indice = 0;
+        
+
+        string[] vecContactos = new string[5];
+        string[] vecTelefono = new string[5];
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -30,7 +38,7 @@ namespace pryAgendaAgustinSanchez
 
         private void frmAgenda_Load(object sender, EventArgs e)
         {
-
+            lblFecha.Text = DateTime.Now.ToString();
         }
 
         private void txtContactos_TextChanged(object sender, EventArgs e)
@@ -51,10 +59,18 @@ namespace pryAgendaAgustinSanchez
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-           varContactos = txtContactos.Text;
-            varNumero = txtNumero.Text;
+           vecContactos[indice] = txtContactos.Text;
+           vecTelefono[indice] = txtNumero.Text;
             
             lstItems.Items.Add("Contacto" + varContactos + "Numero" + varNumero);
+            txtContactos.Text = "";
+            txtNumero.Text = "";
+
+            indice++;
+            vContador++;
+            txtCantidad.Text = vContador.ToString();
+            txtNumero.Enabled = false;
+            btnRegistrar.Enabled = false;
         }
 
         private void txtNumero_MaskChanged(object sender, EventArgs e)
@@ -69,6 +85,17 @@ namespace pryAgendaAgustinSanchez
             {
                 btnRegistrar.Enabled = true;
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtContactos.Text = "";
+            txtNumero.Text = "";
+        }
+
+        private void mtbFecha_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

@@ -38,11 +38,14 @@
             this.txtNumero = new System.Windows.Forms.MaskedTextBox();
             this.lblCantidadC = new System.Windows.Forms.Label();
             this.lblFyH = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtContactos
             // 
-            this.txtContactos.Location = new System.Drawing.Point(187, 42);
+            this.txtContactos.Location = new System.Drawing.Point(145, 98);
             this.txtContactos.Name = "txtContactos";
             this.txtContactos.Size = new System.Drawing.Size(100, 20);
             this.txtContactos.TabIndex = 0;
@@ -51,7 +54,7 @@
             // lblContactos
             // 
             this.lblContactos.AutoSize = true;
-            this.lblContactos.Location = new System.Drawing.Point(65, 45);
+            this.lblContactos.Location = new System.Drawing.Point(23, 101);
             this.lblContactos.Name = "lblContactos";
             this.lblContactos.Size = new System.Drawing.Size(55, 13);
             this.lblContactos.TabIndex = 2;
@@ -60,7 +63,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(65, 100);
+            this.lblNumero.Location = new System.Drawing.Point(23, 156);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 3;
@@ -70,7 +73,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Enabled = false;
-            this.btnRegistrar.Location = new System.Drawing.Point(187, 158);
+            this.btnRegistrar.Location = new System.Drawing.Point(145, 214);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(100, 34);
             this.btnRegistrar.TabIndex = 2;
@@ -80,17 +83,18 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(68, 158);
+            this.btnCancelar.Location = new System.Drawing.Point(26, 214);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 34);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lstItems
             // 
             this.lstItems.FormattingEnabled = true;
-            this.lstItems.Location = new System.Drawing.Point(68, 237);
+            this.lstItems.Location = new System.Drawing.Point(26, 293);
             this.lstItems.Name = "lstItems";
             this.lstItems.Size = new System.Drawing.Size(219, 82);
             this.lstItems.TabIndex = 3;
@@ -98,7 +102,7 @@
             // txtNumero
             // 
             this.txtNumero.Enabled = false;
-            this.txtNumero.Location = new System.Drawing.Point(187, 97);
+            this.txtNumero.Location = new System.Drawing.Point(145, 153);
             this.txtNumero.Mask = "(999)000-0000";
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(100, 20);
@@ -110,7 +114,7 @@
             // lblCantidadC
             // 
             this.lblCantidadC.AutoSize = true;
-            this.lblCantidadC.Location = new System.Drawing.Point(0, 373);
+            this.lblCantidadC.Location = new System.Drawing.Point(23, 387);
             this.lblCantidadC.Name = "lblCantidadC";
             this.lblCantidadC.Size = new System.Drawing.Size(115, 13);
             this.lblCantidadC.TabIndex = 5;
@@ -119,17 +123,46 @@
             // lblFyH
             // 
             this.lblFyH.AutoSize = true;
-            this.lblFyH.Location = new System.Drawing.Point(287, 373);
+            this.lblFyH.Location = new System.Drawing.Point(23, 453);
             this.lblFyH.Name = "lblFyH";
             this.lblFyH.Size = new System.Drawing.Size(71, 13);
             this.lblFyH.TabIndex = 6;
             this.lblFyH.Text = "Fecha y Hora";
             // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(26, 413);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.TabIndex = 7;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(23, 490);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(35, 13);
+            this.lblFecha.TabIndex = 9;
+            this.lblFecha.Text = "label1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(221, 26);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Agenda de Contactos";
+            // 
             // frmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 384);
+            this.ClientSize = new System.Drawing.Size(268, 549);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblFecha);
+            this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.lblFyH);
             this.Controls.Add(this.lblCantidadC);
             this.Controls.Add(this.txtNumero);
@@ -141,6 +174,7 @@
             this.Controls.Add(this.txtContactos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAgenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmGestion de Agenda";
             this.Load += new System.EventHandler(this.frmAgenda_Load);
             this.ResumeLayout(false);
@@ -159,6 +193,9 @@
         private System.Windows.Forms.MaskedTextBox txtNumero;
         private System.Windows.Forms.Label lblCantidadC;
         private System.Windows.Forms.Label lblFyH;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label label1;
     }
 }
 
